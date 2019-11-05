@@ -1,0 +1,40 @@
+package game;
+
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+@SuppressWarning("serial")
+public class Game extends JPanel {
+
+	public static void main(String[] args) throws InterruptedException {
+		JFrame frame = new JFrame("Mini Tennis");
+		Game game = new Game();
+		frame.add(game);
+		frame.setSize(300, 400);
+		frame.setVisible(true);
+		framesetDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		while (true) {
+			game.move();
+			game.repaint();
+			Thread.sleep(10);
+		}
+	}
+
+	Ball ball = new Ball(this);
+
+	private void move() {
+		ball.move();
+	}
+
+	@Override
+	public void paint(Graphics g) {
+		super.paint(g);
+		Graphics2D g2d = (Graphics2D) g;
+		g2d.setREnderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+		ball.paint(g2d);
+	}
+}

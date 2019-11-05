@@ -1,0 +1,51 @@
+#menu {
+02
+  width:530px;
+03
+  padding:0;
+04
+  margin:0;
+05
+  list-style-type: none;
+06
+}
+07
+#menu li {
+08
+  width:20%;
+09
+  float:left;
+10
+  padding:0;
+11
+  margin:0;
+12
+  text-align:center;
+13
+}
+14
+#menu li a {
+15
+  width:auto;
+16
+  color:#fff;
+17
+  font-size:12px;
+18
+  font-weight:bold;
+19
+  padding:10px 0;
+20
+  text-decoration:none;
+21
+  display:block;
+22
+  background:#666;
+23
+}
+24
+#menu li a:hover {
+25
+  background:#555;
+26
+}
